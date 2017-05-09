@@ -1,3 +1,4 @@
+# Model om te communiceren met de flows collectie in de database
 class Flow
   include Mongoid::Document
 
@@ -5,8 +6,8 @@ class Flow
   field :name, type: String
   field :flow_group_id, type: BSON::ObjectId
   field :synchronous, type: Boolean
-  field :error_components, type:  Array
-  field :lock_user_id, type:  BSON::ObjectId
-  field :tracing_ttl, type:  String
-  field :components, type:  Array
+  field :error_components, type: Array
+  field :lock_user_id, type: BSON::ObjectId
+  field :tracing_ttl, type: String
+  field :components, type: Array
 end

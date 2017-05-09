@@ -1,8 +1,9 @@
-# Controller voor het flow model
+# Controller voor het het endpoint dat alle flows terug geeft
 class FlowsController < ApplicationController
 
-  # Geeft alle flows uit de database terug
   def index
+
+    # Gebruik het MongoId model om alle flows uit de database op te halen
     render json: Flow.all.entries
   end
 end

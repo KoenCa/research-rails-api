@@ -9,7 +9,7 @@ class FlowsControllerTest < ActionDispatch::IntegrationTest
   end
 
   # Deze test maakt twee flows aan in een test database genaamd flows_test
-  # Hierna word er gecontroleerd of de controller deze flows correct terug geeft
+  # Hierna wordt er gecontroleerd of de controller deze flows correct terug geeft
   test 'should return all the flows' do
     Flow.delete_all
     flows = Flow.create([
@@ -22,7 +22,6 @@ class FlowsControllerTest < ActionDispatch::IntegrationTest
                     lock_user_id: BSON::ObjectId.from_string('507f1f77bcf86cd799439012'),
                     tracing_ttl: 'test',
                     components: []
-
                   },
                   {
                     trashed: false,
@@ -33,7 +32,6 @@ class FlowsControllerTest < ActionDispatch::IntegrationTest
                     lock_user_id: BSON::ObjectId.from_string('507f1f77bcf86cd799439012'),
                     tracing_ttl: 'test',
                     components: []
-
                   }
                 ])
 
