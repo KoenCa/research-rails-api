@@ -1,6 +1,5 @@
 class Flow
   include Mongoid::Document
-  include Mongoid::Timestamps
 
   field :trashed, type: Boolean
   field :name, type: String
