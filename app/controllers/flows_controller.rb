@@ -6,4 +6,8 @@ class FlowsController < ApplicationController
     # Gebruik het MongoId model om alle flows uit de database op te halen
     render json: Flow.all.entries
   end
+
+  def by_id
+    render json: Flow.find(params[:id])
+  end
 end
