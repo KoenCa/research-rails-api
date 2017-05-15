@@ -1,6 +1,7 @@
 # klasse om de controller te testen
 class FlowsControllerTest < ActionDispatch::IntegrationTest
-  # Deze test controleert of de controller het juiste content type terug geeft
+
+  # Deze test controleert of het endpoint het juiste content type terug geeft
   test '/flows should give the correct response' do
     get '/flows'
     assert_response :success
@@ -39,12 +40,15 @@ class FlowsControllerTest < ActionDispatch::IntegrationTest
     assert_equal flows.to_json, @response.body
   end
 
+  # Deze test controleert of het endpoint het juiste content type terug geeft
   test '/flows/:id should give the correct response' do
     get '/flows/1234'
     assert_response :success
     assert_equal 'application/json', @response.content_type
   end
 
+  # Deze test maakt twee flows aan in een test database genaamd flows_test
+  # Hierna wordt er gecontroleerd of het endpoint de juiste flow terug geeft volgens het opgegeven id
   test '/flows/:id should return the correct flow' do
     Flow.delete_all
     flows = Flow.create([
