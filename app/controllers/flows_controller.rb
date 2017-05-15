@@ -8,6 +8,9 @@ class FlowsController < ApplicationController
   end
 
   def by_id
+
+    # Gebruik het MongoId model om een bepaalde flow uit de database op te halen
+    # volgens id
     render json: Flow.find(params[:id])
   end
 end
